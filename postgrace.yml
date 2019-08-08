@@ -2,8 +2,12 @@
  - hosts: sql
    tasks:
    - name: install PostgreSQL version 11
-     yum: pkg=postgresql11-server  state=present
-     
+     yum: pkg=postgresql  state=present    
+  
+   - name: install PostgreSQL version 11
+     yum: pkg=postgresql-contrib  state=present
+ 
    - name: start postgresql11-server services 
-     service: name=postgresql11-server  state=started
+     service: name=postgresql  state=started
+
      
